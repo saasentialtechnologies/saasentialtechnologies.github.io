@@ -3,65 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaSential Technologies | Software Solutions</title>
+    <title>SaaSential Technologies | Enterprise SaaS & Software Solutions</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
-        header { background: #0f172a; color: #ffffff; padding: 2.5rem 1rem; text-align: center; }
-        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: #38bdf8; }
-        header p { font-size: 1.1rem; opacity: 0.9; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
-        .hero { background: #ffffff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 2rem; border-left: 6px solid #0284c7; }
-        .hero h2 { color: #0f172a; margin-bottom: 1rem; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-        .card { background: #ffffff; padding: 1.5rem; border-radius: 10px; border: 1px solid #e2e8f0; }
-        .card h3 { color: #0369a1; margin-bottom: 0.5rem; }
-        .btn-container { text-align: center; margin: 2.5rem 0; }
-        .whatsapp-btn { background-color: #25d366; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: inline-block; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
-        .whatsapp-btn:hover { background-color: #128c7e; }
-        footer { text-align: center; padding: 1.5rem; background: #0f172a; color: #94a3b8; font-size: 0.9rem; margin-top: 3rem; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        
+        /* Header & Hero */
+        header { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+            padding: 3.5rem 1.5rem; 
+            text-align: center; 
+            border-bottom: 1px solid #334155;
+        }
+        .logo-title { font-size: 2.5rem; font-weight: 800; color: #38bdf8; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+        .tagline { font-size: 1.25rem; color: #94a3b8; max-width: 650px; margin: 0 auto 1.5rem auto; font-weight: 400; }
+        
+        .badge-container { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+        .badge { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; }
+
+        /* Main Container */
+        .container { max-width: 1050px; margin: 3rem auto; padding: 0 1.5rem; }
+        
+        /* Section Title */
+        .section-title { text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 2.5rem; color: #f8fafc; }
+        .section-title span { color: #38bdf8; }
+
+        /* Services Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem; }
+        .card { 
+            background: #1e293b; 
+            border: 1px solid #334155; 
+            border-radius: 14px; 
+            padding: 2rem; 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card:hover { transform: translateY(-4px); border-color: #38bdf8; box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15); }
+        .card-icon { font-size: 2rem; margin-bottom: 1rem; display: inline-block; }
+        .card h3 { font-size: 1.3rem; color: #f8fafc; margin-bottom: 0.75rem; font-weight: 600; }
+        .card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 1.25rem; }
+        .card-tags { font-size: 0.8rem; color: #38bdf8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* CTA Section */
+        .cta-section { 
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); 
+            border-radius: 16px; 
+            padding: 3rem 2rem; 
+            text-align: center; 
+            margin: 4rem 0 2rem 0;
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.25);
+        }
+        .cta-section h2 { font-size: 2rem; color: #ffffff; margin-bottom: 0.75rem; font-weight: 700; }
+        .cta-section p { color: #e0f2fe; margin-bottom: 2rem; font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .whatsapp-btn { 
+            background-color: #25d366; 
+            color: #ffffff; 
+            padding: 1rem 2.25rem; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .whatsapp-btn:hover { background-color: #1eb857; transform: scale(1.02); }
+
+        /* Footer */
+        footer { 
+            border-top: 1px solid #334155; 
+            text-align: center; 
+            padding: 2.5rem 1.5rem; 
+            background: #0f172a; 
+            color: #64748b; 
+            font-size: 0.9rem; 
+            margin-top: 4rem; 
+        }
+        footer strong { color: #94a3b8; }
+        footer a { color: #38bdf8; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>SaaSential Technologies</h1>
-        <p>Offline-First & Custom Software Solutions</p>
+        <div class="logo-title">SaaSential Technologies</div>
+        <p class="tagline">Next-Generation Software Architecture: Offline-First Systems, Enterprise Cloud Platforms & Tailored SaaS Solutions.</p>
+        <div class="badge-container">
+            <span class="badge">☁️ Cloud SaaS</span>
+            <span class="badge">⚡ 100% Offline-First</span>
+            <span class="badge">🛠️ Custom Development</span>
+            <span class="badge">📊 Multi-Tenant Platforms</span>
+        </div>
     </header>
 
     <div class="container">
-        <div class="hero">
-            <h2>Reliable, Fast & Custom Engineered Software Solutions</h2>
-            <p>From offline-first point-of-sale systems and hotel management platforms to custom web applications—we build high-performance software tailored to your business needs.</p>
+        
+        <h2 class="section-title">Our Software <span>Capabilities</span></h2>
+
+        <div class="grid">
+            
+            <div class="card">
+                <div>
+                    <span class="card-icon">☁️</span>
+                    <h3>Cloud-Based SaaS Solutions</h3>
+                    <p>Scalable, high-performance web applications tailored to business operations. Multi-tenant architecture with real-time data sync, role-based controls, and automated reporting.</p>
+                </div>
+                <div class="card-tags">Cloud • Web Apps • Multi-Tenant</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-icon">⚡</span>
+                    <h3>Offline-First Systems</h3>
+                    <p>Zero-downtime management systems built for uninterrupted billing, reception desk workflows, and store operations—functioning perfectly even without active internet.</p>
+                </div>
+                <div class="card-tags">POS • HotelMS • High Availability</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-icon">🏨</span>
+                    <h3>Hospitality & Retail Suite</h3>
+                    <p>Comprehensive suites for Hotels, Guest Houses, Supermarkets, Pharmacies, and Retail chains. Automated stock inventory, check-ins, and financial insights.</p>
+                </div>
+                <div class="card-tags">Inventory • Check-ins • Analytics</div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-icon">⚙️</span>
+                    <h3>Custom Software Engineering</h3>
+                    <p>Bespoke software platforms engineered from scratch to solve your precise business bottlenecks, API integrations, and database optimization challenges.</p>
+                </div>
+                <div class="card-tags">Custom API • MySQL • Systems</div>
+            </div>
+
         </div>
 
-        <div class="features">
-            <div class="card">
-                <h3>⚡ Offline-First Architecture</h3>
-                <p>Run critical billing and operations without active internet connections or server dependencies.</p>
-            </div>
-            <div class="card">
-                <h3>🏨 HotelMS & Hospitality</h3>
-                <p>Seamless check-ins, automated room allocation, housekeeping management, and instant invoices.</p>
-            </div>
-            <div class="card">
-                <h3>🛒 Retail POS & Stock Management</h3>
-                <p>Lightning-fast barcode scanning, supplier management, and real-time financial reporting.</p>
-            </div>
-            <div class="card">
-                <h3>🌐 Custom Application Development</h3>
-                <p>Tailored web applications and enterprise workflows built for speed, scalability, and ease of use.</p>
-            </div>
+        <div class="cta-section">
+            <h2>Need a Custom Software or SaaS Platform?</h2>
+            <p>From offline desktop billing software to fully hosted multi-tenant cloud platforms—let's build the exact solution your business requires.</p>
+            <a href="https://wa.me/923267906486?text=Hi%20Talal,%20I%20want%20to%20discuss%20a%20custom%20software%20or%20SaaS%20project." class="whatsapp-btn" target="_blank">
+                📱 Get in Touch via WhatsApp
+            </a>
         </div>
 
-        <div class="btn-container">
-            <a href="https://wa.me/923267906486?text=Hi%20Talal,%20I%20want%20to%20discuss%20a%20software%20solution." class="whatsapp-btn" target="_blank">📱 Contact via WhatsApp</a>
-        </div>
     </div>
 
     <footer>
-        <p>© SaaSential Technologies | Founder & CEO: Talal Javed | Lahore, Pakistan</p>
-        <p>Email: saasentialtechnologies@gmail.com | Phone: +92 326 7906486</p>
+        <p>© SaaSential Technologies | Founder & CEO: <strong>Talal Javed</strong></p>
+        <p style="margin-top: 0.5rem;">Email: <a href="mailto:saasentialtechnologies@gmail.com">saasentialtechnologies@gmail.com</a> | Phone: +92 326 7906486 | Lahore, Pakistan</p>
     </footer>
 
 </body>
